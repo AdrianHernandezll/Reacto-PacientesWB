@@ -1,15 +1,20 @@
+import Formulario from "./component/Formulario";
 import Header from "./component/Header";
+import ListadoPacientes from "./component/ListadoPacientes";
 
 
-export default function App() {
+function App() {
   return(
 
     <div className="App">
-    <Header/>
-        
-
+      <Header/>
+      <ListadoPacientes/>
+      <Formulario/> 
+  
     </div>
     
   )
    
 }
+
+export default App;

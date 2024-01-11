@@ -1,11 +1,12 @@
+import Header from "./component/Header";
 
 
 export default function App() {
   return(
 
     <div className="App">
-
-        <h1>Hello CodeSandbox</h1>
+    <Header/>
+        
 
     </div>
     

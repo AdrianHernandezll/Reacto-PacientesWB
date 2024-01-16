@@ -20,6 +20,7 @@ const Formulario = () => {
       console.log('Hay almenos un campo vacio')
 
       setError(true)
+      return;
     }
 
     setError(false)

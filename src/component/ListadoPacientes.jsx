@@ -1,7 +1,7 @@
 const ListadoPacientes = () => {
 
   return(
-    <div>
+    <div className="w-1/2 lg:w-3/5">
       <h1>Listado de Pacientes</h1>
     </div>
   )

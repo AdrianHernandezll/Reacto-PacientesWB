@@ -8,7 +8,18 @@ const Formulario = () => {
   const [fecha, setFecha] = useState('');
   const [sintomas,setSintomas] = useState('');
 
+  const handleSubmit = (e) =>{
+    
+    e.preventDefault();
 
+    //Validacion del Formulario
+
+    if([nombre,propietario,email,fecha,sintomas].includes("")){
+      console.log('Hay almenos un campo vacio')
+    }else {
+      console.log('Todos Llenos')
+    }
+  }
 
 
   return (
@@ -19,7 +30,7 @@ const Formulario = () => {
           Añade pacientes y <span className="text-indigo-600 font-bold text-lg">Administralos</span>
         </p>
 
-        <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
+        <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
           <div className="mb-5">
               <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">Nombre Mascota</label>
               <input
@@ -79,7 +90,7 @@ const Formulario = () => {
           <input
             type="submit"
             className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-all"
-            value="Agrega Paciente"
+            value='enviar'
           />
 
 

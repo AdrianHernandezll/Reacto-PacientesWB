@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react";
+import Error from "./Error";
 
 const Formulario = ({pacientes,setPacientes}) => {
 
@@ -35,7 +36,14 @@ const Formulario = ({pacientes,setPacientes}) => {
       sintomas
     }
 
-    setPacientes();
+    setPacientes([...pacientes, objetoPaciente]);
+
+    //Reiniciar el form
+    setNombre('')
+    setPropietario('')
+    setEmail('')
+    setFecha('')
+    setSintomas('')
   }
 
 
@@ -48,10 +56,7 @@ const Formulario = ({pacientes,setPacientes}) => {
         </p>
 
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
-          {error &&(
-          <div className="bg-red-800 text-center font-bold mb-3 rounded text-white p-3">
-              <p>Todos los Campos son obligatorios</p>
-          </div> )}
+          {error && (<Error mensaje={'Todos los Campos son Obligatorios'}/>)}
           <div className="mb-5">
               <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">Nombre Mascota</label>
               <input
@@ -91,7 +96,7 @@ const Formulario = ({pacientes,setPacientes}) => {
               <label htmlFor="alta" className="block text-gray-700 uppercase font-bold">Alta</label>
               <input
               id="alta"
-              type="time" 
+              type="date" 
               className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
               value={fecha}
               onChange={(e)=> setFecha(e.target.value)}

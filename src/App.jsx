@@ -10,7 +10,9 @@ function App() {
   const [paciente,setPaciente] = useState({});
 
 
-
+  const eliminarPaciente = (id) => {
+      console.log('eliminado paciente', id)
+  }
 
   return(
 
@@ -26,6 +28,7 @@ function App() {
         <ListadoPacientes
           pacientes={pacientes}
           setPaciente={setPaciente}
+          eliminarPaciente={eliminarPaciente}
         />
       </div>
   

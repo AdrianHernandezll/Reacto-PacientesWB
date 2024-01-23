@@ -1,5 +1,5 @@
 
-const Pacientes = ({paciente, setPaciente}) => {
+const Pacientes = ({paciente, setPaciente,eliminadoPaciente}) => {
 
     const {nombre,propietario,email,fecha,sintomas} = paciente
   return (
